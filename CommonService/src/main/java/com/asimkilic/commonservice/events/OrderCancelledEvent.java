@@ -1,2 +1,9 @@
-package com.asimkilic.commonservice.events;public class OrderCancelledEvent {
+package com.asimkilic.commonservice.events;
+
+import lombok.Data;
+
+@Data
+public class OrderCancelledEvent {
+    private String orderId;
+    private String orderStatus;
 }

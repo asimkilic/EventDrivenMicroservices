@@ -1,2 +1,13 @@
-package com.asimkilic.commonservice.events;public class PaymentProcessedEvent {
+package com.asimkilic.commonservice.events;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class PaymentProcessedEvent {
+    private String paymentId;
+    private String orderId;
 }

@@ -1,2 +1,14 @@
-package com.asimkilic.commonservice.commands;public class CompleteOrderCommand {
+package com.asimkilic.commonservice.commands;
+
+import lombok.Builder;
+import lombok.Data;
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
+
+@Data
+@Builder
+public class CompleteOrderCommand {
+    @TargetAggregateIdentifier
+    private String orderId;
+    private String orderStatus;
+
 }

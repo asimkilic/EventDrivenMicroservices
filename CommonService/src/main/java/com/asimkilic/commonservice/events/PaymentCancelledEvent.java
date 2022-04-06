@@ -3,7 +3,7 @@ package com.asimkilic.commonservice.events;
 import lombok.Data;
 
 @Data
-public class PaymentCalcelledEvent {
+public class PaymentCancelledEvent {
     private String paymentId;
     private String orderId;
     private String paymentStatus ;

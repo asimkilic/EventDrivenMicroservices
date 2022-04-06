@@ -1,4 +1,4 @@
-package com.asimkilic.userservice;
+package com.asimkilic.commonservice;
 
 import com.thoughtworks.xstream.XStream;
 import org.springframework.context.annotation.Bean;
