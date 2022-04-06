@@ -1,5 +1,6 @@
 package com.asimkilic.orderservice.command.api.events;
 
+import com.asimkilic.commonservice.events.OrderCancelledEvent;
 import com.asimkilic.commonservice.events.OrderCompletedEvent;
 import com.asimkilic.orderservice.command.api.data.Order;
 import com.asimkilic.orderservice.command.api.data.OrderRepository;
@@ -24,6 +25,13 @@ public class OrderEventsHandler {
 
     @EventHandler
     public void on(OrderCompletedEvent event) {
+        Order order = orderRepository.findById(event.getOrderId()).get();
+        order.setOrderStatus(event.getOrderStatus());
+        orderRepository.save(order);
+    }
+
+    @EventHandler
+    public void on(OrderCancelledEvent event){
         Order order = orderRepository.findById(event.getOrderId()).get();
         order.setOrderStatus(event.getOrderStatus());
         orderRepository.save(order);
