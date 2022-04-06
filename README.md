@@ -54,7 +54,7 @@ Add axon and google guava dependencies on pom.xml
 
 The saga design pattern is a way  to manage data consistency across microservices in distributed transaction scenarios
 
-![image-20220404231310732](/home/asimkilic/snap/typora/57/.config/Typora/typora-user-images/image-20220404231310732.png)
+<img src="https://raw.githubusercontent.com/asimkilic/EventDrivenMicroservices/master/assets/image-20220404231310732.png" />
 
 
 
@@ -62,7 +62,7 @@ The saga design pattern is a way  to manage data consistency across microservice
 
 **Success and Failure Scenarios**
 
-![image-20220404233011617](/home/asimkilic/snap/typora/57/.config/Typora/typora-user-images/image-20220404233011617.png)
+<img src="https://raw.githubusercontent.com/asimkilic/EventDrivenMicroservices/master/assets/image-20220404233011617.png" />
 
 
 
