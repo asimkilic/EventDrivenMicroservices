@@ -1,5 +1,7 @@
 package com.asimkilic.orderservice.command.api.aggregate;
 
+import com.asimkilic.commonservice.commands.CompleteOrderCommand;
+import com.asimkilic.commonservice.events.OrderCompletedEvent;
 import com.asimkilic.orderservice.command.api.command.CreateOrderCommand;
 import com.asimkilic.orderservice.command.api.events.OrderCreatedEvent;
 import org.axonframework.commandhandling.CommandHandler;
@@ -41,5 +43,21 @@ public class OrderAggregate {
         this.productId = event.getProductId();
         this.addressId = event.getAddressId();
 
+    }
+
+    @CommandHandler
+    public void handle(CompleteOrderCommand completeOrderCommand) {
+        // Validate the Command
+        // Publish Order Completed Event
+        OrderCompletedEvent orderCompletedEvent = OrderCompletedEvent.builder()
+                .orderId(completeOrderCommand.getOrderId())
+                .orderStatus(completeOrderCommand.getOrderStatus())
+                .build();
+        AggregateLifecycle.apply(orderCompletedEvent);
+    }
+
+    @EventSourcingHandler
+    public void on(OrderCompletedEvent event){
+        this.orderStatus = event.getOrderStatus();
     }
 }
